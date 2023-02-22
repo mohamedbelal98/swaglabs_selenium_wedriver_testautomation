@@ -8,7 +8,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import pages.LoginPage;
-import utli.ScreenShot;
+import utli.Utilities;
 
 import java.io.IOException;
 
@@ -48,7 +48,7 @@ public class BaseTest {
     public void failed_screenShot(ITestResult iTestResult) throws IOException {
 
         if (iTestResult.getStatus() == ITestResult.FAILURE) {
-            ScreenShot.takeScreenShot(driver, "src/test/screen_shoot/" + iTestResult.getName() + ".png");
+            Utilities.takeScreenShot(driver, "src/main/java/screen_shoot/" + iTestResult.getName() + ".png");
         }
 
     }

@@ -1,14 +1,11 @@
 package pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import utli.Utilities;
 
-import java.time.Duration;
 import java.util.List;
 
 public class HomePage {
@@ -48,10 +45,10 @@ public class HomePage {
         return new HomePage(driver);
     }
 
-    public HomePage clickSecondAddToCartButton() {
+    public void clickSecondAddToCartButton() {
 
         driver.findElement(addSecondItemToCAart).click();
-        return new HomePage(driver);
+        new HomePage(driver);
     }
 
     public String getNumberOfItemInCart() {
@@ -96,16 +93,15 @@ public class HomePage {
 //        actions.moveToElement(logOut).click().perform();
 
         driver.findElement(menuButton).click();
-        WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(20));
-        webDriverWait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@id='logout_sidebar_link']")));
+
+        Utilities.waitStrategyVisibility(driver, By.xpath("//a[@id='logout_sidebar_link']"), 20);
         driver.findElement(logOutButton).click();
     }
 
     public void scrollToFooter() {
 
         WebElement footer = driver.findElement(footerToScroll);
-        String script = "arguments[0].scrollIntoView();";
-        ((JavascriptExecutor) driver).executeScript(script, footer);
+        Utilities.scrollDown(driver, footer);
     }
 
     public String getProductNameUsingInFilter() {
