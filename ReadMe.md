@@ -28,6 +28,6 @@ Prerequisites: jdk-17 and maven should be installed
 
 1. Clone or download the project.
 2. run the following command `mvn test` to run all test classes.
-3. run the following command `mvn test -Dtest=”TestClassName` to run single test class.
-4. run the following command `mvn test -Dtest="TestClassName#TestMethodName ` to run single test method.
+3. run the following command `mvn test -Dtest=TestClassName` to run single test class.
+4. run the following command `mvn test -Dtest=TestClassName#TestMethodName` to run single test method.
 
