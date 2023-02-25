@@ -22,6 +22,7 @@ public class HomePage {
     private final By footerToScroll = By.className("footer_copy");
     private final By productNameTextUsingInFilter = By.xpath("//a[@id='item_2_title_link']/child::div");
     private final By logOutButton = By.xpath("//a[@id='logout_sidebar_link']");
+    private final By aboutButton = By.xpath("//a[@id='about_sidebar_link']");
 
     public HomePage(WebDriver driver) {
 
@@ -96,6 +97,14 @@ public class HomePage {
 
         Utilities.waitStrategyVisibility(driver, By.xpath("//a[@id='logout_sidebar_link']"), 20);
         driver.findElement(logOutButton).click();
+    }
+
+    public void clickAboutNavigateToAnotherPage(){
+
+        driver.findElement(menuButton).click();
+
+        Utilities.waitStrategyVisibility(driver,aboutButton,20);
+        driver.findElement(aboutButton).click();
     }
 
     public void scrollToFooter() {

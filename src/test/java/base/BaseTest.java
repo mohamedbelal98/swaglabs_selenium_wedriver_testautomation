@@ -48,7 +48,7 @@ public class BaseTest {
     public void failed_screenShot(ITestResult iTestResult) throws IOException {
 
         if (iTestResult.getStatus() == ITestResult.FAILURE) {
-            Utilities.takeScreenShot(driver, "src/main/java/screen_shoot/" + iTestResult.getName() + ".png");
+            Utilities.takeScreenShot(driver, "screenShot/" + iTestResult.getName() + ".png");
         }
 
     }
