@@ -20,9 +20,9 @@ public class TestConfirmOrder extends BaseTest {
         informationPage.setLastNameInput("Last Name");
         informationPage.setPostalCodeInput("12345678");
         OverViewPage overViewPage = informationPage.clickContinueButton();
-        assertEquals(overViewPage.getOverViewText(), "CHECKOUT: OVERVIEW", "Error in overView page");
+        assertEquals(overViewPage.getOverViewText(), "Checkout: Overview", "Error in overView page");
         CompletePage completePage = overViewPage.clickFinishButton();
-        assertEquals(completePage.getThankYouText(), "THANK YOU FOR YOUR ORDER", "Error in complete page");
+        assertEquals(completePage.getThankYouText(), "Thank you for your order!", "Error in complete page");
 
     }
 }

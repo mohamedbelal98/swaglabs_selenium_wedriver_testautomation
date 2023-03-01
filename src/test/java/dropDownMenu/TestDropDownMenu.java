@@ -15,7 +15,7 @@ public class TestDropDownMenu extends BaseTest {
         loginPage.setPasswordInput("secret_sauce");
 
         HomePage homePage = loginPage.clickLoginButton();
-        assertEquals(homePage.getProductTextName(), "PRODUCTS", "Home Page not exist");
+        assertEquals(homePage.getProductTextName(), "Products", "Home Page not exist");
 
         var selectedOption = homePage.getSelectionOptions();
         System.out.println(selectedOption);

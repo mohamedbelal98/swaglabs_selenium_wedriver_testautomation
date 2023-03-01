@@ -17,7 +17,7 @@ public class TestDeleteItemFromCart extends BaseTest {
         HomePage homePage = loginPage.clickLoginButton();
         CartDetails cartDetails = homePage.clickAddToCartButton().clickInCartIcon();
         cartDetails.clickRemoveButton();
-        assertEquals(cartDetails.getContinueShoppingText(), "CONTINUE SHOPPING", "Error in CartDetails Page");
+        assertEquals(cartDetails.getContinueShoppingText(), "Continue Shopping", "Error in CartDetails Page");
 
     }
 
